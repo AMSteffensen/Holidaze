@@ -1,0 +1,35 @@
+@import './sass/style.scss';
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #88342b;
+}
+
+p {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 7px rgba(0,0,0, 0.1);
+  transition: all 0.4s;
+}
+
+li:hover {
+  box-shadow: none;
+}
