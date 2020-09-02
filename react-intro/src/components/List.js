@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { FiCheck } from "react-icons/fi";
 
 function List() {
     return (
         <ul>
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
-        <li>Four</li>
-        <li>Five</li>
+        <li><FiCheck /> One</li>
+        <li><FiCheck />Two</li>
+        <li><FiCheck />Three</li>
+        <li><FiCheck />Four</li>
+        <li><FiCheck />Five</li>
       </ul>
     )
 }
