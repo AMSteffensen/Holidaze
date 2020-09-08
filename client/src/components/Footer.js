@@ -4,9 +4,9 @@ function Footer() {
     return (
         <footer className="footer">
         <div className="footer__item">
-           <div>
-                <input placeholder="email" type="text"/>
-                <button>Signup</button>
+           <div className="email-form">
+                <input className="email-form__input" placeholder="email" type="text"/>
+                <button className="email-form__button">Signup</button>
            </div>
         </div>
            <div className="footer__item">

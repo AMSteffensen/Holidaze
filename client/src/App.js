@@ -6,10 +6,11 @@ import List from "./components/List";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import Product from "./components/Product";
-
+import Contact from "./components/content/Contact";
+import Container from "./components/layout/Container"
 function App() {
   return (
-    <>
+    <Container>
       <div className="wrapper">
         <div className="container">
           <Navigation />          
@@ -29,10 +30,11 @@ function App() {
                 <Product special="product--sold-out" title="Hello" description="product description" price="30"/>
               </div>
             </div>
+            <Contact />
       </div>
       </div>
       <Footer />
-    </>
+    </Container>
   );
 }
 
