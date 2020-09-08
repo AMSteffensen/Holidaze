@@ -1,41 +1,39 @@
-import React from 'react';
-import './sass/style.scss';
-import Heading from "./components/Heading";
-import Paragraph from "./components/Paragraph";
-import List from "./components/List";
-import Footer from "./components/Footer";
-import Navigation from "./components/Navigation";
-import Product from "./components/Product";
-import Contact from "./components/content/Contact";
-import Container from "./components/layout/Container"
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import { AuthContextProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/routes/ProtectedRoute";
+import Home from "./components/home/Home";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import Hotels from "./components/admin/Hotels";
+import AddHotel from "./components/admin/AddHotel";
+import EditHotel from "./components/admin/EditHotel";
+import Dashboard from "./components/admin/Dashboard";
+import Nav from "./components/layout/Nav";
+import "./App.css";
+
 function App() {
-  return (
-    <Container>
-      <div className="wrapper">
-        <div className="container">
-          <Navigation />          
-          <Heading color="blue" content="Page Title" fontSize="50" padding="10"/>
-            <List />
-            <div className="grid">
-              <div className="grid__item">
-                <Product title="Hello" description="product description" price="10"/>
-              </div>
-              <div className="grid__item">
-                <Product special="product--special" title="Hello" description="product description" price="50"/>
-              </div>
-              <div className="grid__item">
-                <Product title="Hello" description="product description" price="22"/>
-              </div>
-              <div className="grid__item">
-                <Product special="product--sold-out" title="Hello" description="product description" price="30"/>
-              </div>
-            </div>
-            <Contact />
-      </div>
-      </div>
-      <Footer />
-    </Container>
-  );
+    return (
+        <AuthContextProvider>
+            <Router>
+                <Nav />
+
+                <Container>
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/register" component={Register} />
+                        <ProtectedRoute path="/admin" exact component={Dashboard} />
+                        <ProtectedRoute path="/admin/hotels" exact component={Hotels} />
+                        <ProtectedRoute path="/admin/hotels/add" exact component={AddHotel} />
+                        <ProtectedRoute path="/admin/hotels/edit/:id" exact component={EditHotel} />
+                        <Redirect to="/" />
+                    </Switch>
+                </Container>
+            </Router>
+        </AuthContextProvider>
+    );
 }
 
 export default App;
