@@ -11,6 +11,13 @@ import AddHotel from "./components/admin/AddHotel";
 import EditHotel from "./components/admin/EditHotel";
 import Dashboard from "./components/admin/Dashboard";
 import Nav from "./components/layout/Nav";
+
+// pages
+import AboutPage from './pages/AboutPage';
+import HotelPage from './pages/HotelPage';
+import HotelDetailsPage from './pages/HotelDetailsPage';
+import ContactPage from './pages/ContactPage';
+
 import "./sass/main.scss";
 
 function App() {
@@ -18,12 +25,15 @@ function App() {
         <AuthContextProvider>
             <Router>
                 <Nav />
-
                 <Container>
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={Register} />
+                        <Route path="/about" component={AboutPage} />
+                        <Route path="/hotels" component={HotelPage} />
+                        <Route path="/contact" component={ContactPage} />
+                        <Route path="/hotels/:id" exact component={HotelDetailsPage} />
                         <ProtectedRoute path="/admin" exact component={Dashboard} />
                         <ProtectedRoute path="/admin/hotels" exact component={Hotels} />
                         <ProtectedRoute path="/admin/hotels/add" exact component={AddHotel} />

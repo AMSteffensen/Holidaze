@@ -6,20 +6,43 @@ import Logout from "../auth/Logout";
 function Nav() {
     const { user } = useContext(AuthContext);
     return (
+        <>
         <div className="menu">
-            <NavLink to="/" exact>
+        <nav>
+            <ul>
+                <li><NavLink to="/" exact>
                 Home
-            </NavLink>
-
+            </NavLink></li>
+            <li>
+                <NavLink to="/About" exact>
+                    About
+                </NavLink>
+            </li>
+            <li>
+                <NavLink to="/contact" exact>
+                    Contact
+                </NavLink>
+            </li>
+            <li>
+                <NavLink to="/hotels" exact>
+                    Hotels
+                </NavLink>
+            </li>
             {user ? (
                 <>
+                    <li>
                     <NavLink to="/admin">Admin</NavLink>
-                    <Logout />
+                    </li>
+                    <li> <Logout /></li>
                 </>
             ) : (
-                <NavLink to="/register">Login</NavLink>
+                <li> <NavLink to="/register">Login</NavLink></li>
+               
             )}
+            </ul>
+        </nav>
         </div>
+        </>
     );
 }
 
