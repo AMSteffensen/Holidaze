@@ -11,7 +11,7 @@ import AddHotel from "./components/admin/AddHotel";
 import EditHotel from "./components/admin/EditHotel";
 import Dashboard from "./components/admin/Dashboard";
 import Nav from "./components/layout/Nav";
-import "./App.css";
+import "./sass/main.scss";
 
 function App() {
     return (
