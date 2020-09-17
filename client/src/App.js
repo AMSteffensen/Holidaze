@@ -33,7 +33,7 @@ function App() {
                         <Route path="/about" component={AboutPage} />
                         <Route path="/hotels" component={HotelPage} />
                         <Route path="/contact" component={ContactPage} />
-                        <Route path="/hotels/:id" exact component={HotelDetailsPage} />
+                        <Route path="/hotels-detail/:id" component={HotelDetailsPage} />
                         <ProtectedRoute path="/admin" exact component={Dashboard} />
                         <ProtectedRoute path="/admin/hotels" exact component={Hotels} />
                         <ProtectedRoute path="/admin/hotels/add" exact component={AddHotel} />
