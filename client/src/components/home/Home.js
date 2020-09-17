@@ -25,7 +25,6 @@ function Home() {
     }
    
 
-
     useEffect(() => {
         fetch(url, options)
             .then((response) => response.json())
@@ -48,17 +47,23 @@ function Home() {
                 })}
 
         <Form onSubmit={handleSubmit(onSubmit)}>
-            <h2>Contact us</h2>
+            <h2>Questions?</h2>
             <Form.Group>
                 <Form.Label>
                     Name
                 </Form.Label>
                 <Form.Control name="name" placeholder="Enter your name" ref={register} />
             </Form.Group>
-
             <Form.Group>
                 <Form.Label>
                     E-mail
+                </Form.Label>
+                <Form.Control name="email" placeholder="Enter your e-mail address" ref={register} />
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>
+                    Message
                 </Form.Label>
                 <Form.Control name="email" placeholder="Enter your e-mail address" ref={register} />
             </Form.Group>
