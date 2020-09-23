@@ -11,4 +11,3 @@ export const headers = {
 export const PATCH = "PATCH";
 export const DELETE = "DELETE";
 
-//const establishmentsUrl = BASE_URL + "establishments";

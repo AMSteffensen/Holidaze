@@ -25,7 +25,6 @@ function Home() {
     }
    
 
-
     useEffect(() => {
         fetch(url, options)
             .then((response) => response.json())
@@ -42,7 +41,7 @@ function Home() {
              {hotels.map((hotel) => {
                     return (
                         <li key={hotel.id}>
-                            <NavLink to={`/admin/hotels/edit/${hotel.id}`}>{hotel.name}</NavLink>
+                            <NavLink to={`hotels-detail/${hotel.id}`}>{hotel.name}</NavLink>
                         </li>
                     );
                 })}
