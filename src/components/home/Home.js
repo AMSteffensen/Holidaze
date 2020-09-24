@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { NavLink } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
-import LocationSearchInput from "../../components/search/LocationSearchInput";
 
 function Home() {
     const [hotels, setHotels] = useState([]);
@@ -27,7 +26,6 @@ function Home() {
    
 
     useEffect(() => {
-        const searchResult = [];
         fetch(url, options)
             .then((response) => response.json())
             .then((json) => {
@@ -40,7 +38,6 @@ function Home() {
     return (
         <>
        <h1>Need a place to stay?</h1> 
-       <LocationSearchInput />
       <Form onSubmit={handleSubmit(onSubmit)}>
         <h2>Bergen has multiple places to stay</h2>
         <Form.Group>
