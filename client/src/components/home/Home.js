@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+    import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { NavLink } from "react-router-dom";
 import { BASE_URL, headers } from "../../constants/api";
+import LocationSearchInput from "../../components/search/LocationSearchInput";
 
 function Home() {
     const [hotels, setHotels] = useState([]);
-    const { register, handleSubmit } = useForm();
+    const { HotelPage, handleSubmit } = useForm();
     const history = useHistory();
     const data = "";
     const url = BASE_URL + "establishments";
@@ -18,10 +19,10 @@ function Home() {
     async function onSubmit(data) {
         console.log("data", data);
         const url = BASE_URL + "contacts";
-        const options = { headers, method: "POST", body: JSON.stringify(data) };
+        const options = { headers, method: "GET", body: JSON.stringify(data) };
     
         await fetch(url, options);
-        history.push("/admin/hotels")
+        history.push("/hotels")
     }
    
 
@@ -37,39 +38,23 @@ function Home() {
 
     return (
         <>
-        <h1>Hotels</h1>
-             {hotels.map((hotel) => {
-                    return (
-                        <li key={hotel.id}>
-                            <NavLink to={`hotels-detail/${hotel.id}`}>{hotel.name}</NavLink>
-                        </li>
-                    );
-                })}
+       <h1>Need a place to stay?</h1> 
+       <LocationSearchInput />
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <h2>Bergen has multiple places to stay</h2>
+        <Form.Group>
+          <Form.Label>Try searching for one!</Form.Label>
+          <Form.Control
+            name='search'
+            placeholder='Search by name or location.'
+            ref={HotelPage}
+          />
+        </Form.Group>
+        
+        <Button type='submit'>Search</Button>
+      </Form>
 
-        <Form onSubmit={handleSubmit(onSubmit)}>
-            <h2>Questions?</h2>
-            <Form.Group>
-                <Form.Label>
-                    Name
-                </Form.Label>
-                <Form.Control name="name" placeholder="Enter your name" ref={register} />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>
-                    E-mail
-                </Form.Label>
-                <Form.Control name="email" placeholder="Enter your e-mail address" ref={register} />
-            </Form.Group>
-
-            <Form.Group>
-                <Form.Label>
-                    Message
-                </Form.Label>
-                <Form.Control name="email" placeholder="Enter your e-mail address" ref={register} />
-            </Form.Group>
-            <Button type="submit">Submit</Button>
-        </Form>
-        </>
+    </>
     )
 }
 
