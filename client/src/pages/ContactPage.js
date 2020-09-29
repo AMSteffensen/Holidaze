@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import styled from "styled-components";
+
+import Input from "../components/contact/Input";
+import Form from "../components/contact/Form";
+import Button from "../components/contact/Button";
+
 import { useHistory } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import { NavLink } from "react-router-dom";
 import { BASE_URL, headers } from "../constants/api";
 
@@ -29,34 +33,17 @@ function ContactPage() {
         <>
         <h1>Contact us</h1>
         <p>Welcome to our site. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae autem iste fugit. Soluta, molestias aspernatur consequuntur esse rerum explicabo! Quisquam odit placeat fugit delectus iusto!</p>
-
         <Form onSubmit={handleSubmit(onSubmit)}>
-            <h2>Questions?</h2>
-            <Form.Group>
-                <Form.Label>
-                    Name
-                </Form.Label>
-                <Form.Control name="name" placeholder="Enter your name" ref={register} />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>
-                    E-mail
-                </Form.Label>
-                <Form.Control name="email" placeholder="Enter your e-mail address" ref={register} />
-            </Form.Group>
+            <Input name="firstName" placeholder="First name" ref={register({ required: true })}/>
 
-            <Form.Group>
-                <Form.Label>
-                    Message
-                </Form.Label>
-                <Form.Control name="email" placeholder="Enter your e-mail address" ref={register} />
-            </Form.Group>
-            <Button type="submit">Submit</Button>
+            <Button/>
         </Form>
+        
     </>
     )
     
 }
 
 export default ContactPage;
+
 

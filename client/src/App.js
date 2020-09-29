@@ -1,4 +1,5 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import { AuthContextProvider } from "./context/AuthContext";
@@ -20,12 +21,17 @@ import HotelPage from './pages/HotelPage';
 import HotelDetailsPage from './pages/HotelDetailsPage';
 import ContactPage from './pages/ContactPage';
 
-import "./sass/main.scss";
+import GlobalStyle from "./styles/globalstyles";
+import theme from "./styles/theme";
+
+//import "./sass/main.scss";
 import "antd/dist/antd.css";
 
 function App() {
     return (
         <AuthContextProvider>
+            <ThemeProvider theme={theme}>
+            <GlobalStyle />
             <Router>
                 <Nav />
                 <Container>
@@ -46,6 +52,7 @@ function App() {
                 </Container>
                 <Footer />
             </Router>
+            </ThemeProvider>
         </AuthContextProvider>
     );
 }
