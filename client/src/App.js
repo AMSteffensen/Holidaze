@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import Container from "react-bootstrap/Container";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
+//import components
 import Home from "./components/home/Home";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -11,6 +12,7 @@ import AddHotel from "./components/admin/AddHotel";
 import EditHotel from "./components/admin/EditHotel";
 import Dashboard from "./components/admin/Dashboard";
 import Nav from "./components/layout/Nav";
+import Footer from "./components/footer/Footer";
 
 // pages
 import AboutPage from './pages/AboutPage';
@@ -19,6 +21,7 @@ import HotelDetailsPage from './pages/HotelDetailsPage';
 import ContactPage from './pages/ContactPage';
 
 import "./sass/main.scss";
+import "antd/dist/antd.css";
 
 function App() {
     return (
@@ -41,6 +44,7 @@ function App() {
                         <Redirect to="/" />
                     </Switch>
                 </Container>
+                <Footer />
             </Router>
         </AuthContextProvider>
     );

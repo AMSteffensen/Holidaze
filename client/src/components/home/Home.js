@@ -1,61 +1,23 @@
-    import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { NavLink } from "react-router-dom";
-import { BASE_URL, headers } from "../../constants/api";
-import LocationSearchInput from "../../components/search/LocationSearchInput";
+import React from "react";
+import styled from "styled-components";
+
+// import components
+import Contact from "../contact/Contact";
+import Search from "../search/Search";
+
+const Container = styled.div`
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2em;
+`;
 
 function Home() {
-    const [hotels, setHotels] = useState([]);
-    const { HotelPage, handleSubmit } = useForm();
-    const history = useHistory();
-    const data = "";
-    const url = BASE_URL + "establishments";
-    const options = { headers };
-
-  
-    async function onSubmit(data) {
-        console.log("data", data);
-        const url = BASE_URL + "contacts";
-        const options = { headers, method: "GET", body: JSON.stringify(data) };
     
-        await fetch(url, options);
-        history.push("/hotels")
-    }
-   
-
-    useEffect(() => {
-        const searchResult = [];
-        fetch(url, options)
-            .then((response) => response.json())
-            .then((json) => {
-                console.log(json);
-                setHotels(json);
-            })
-            .catch((error) => console.log(error));
-    }, []);
-
     return (
-        <>
-       <h1>Need a place to stay?</h1> 
-       <LocationSearchInput />
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <h2>Bergen has multiple places to stay</h2>
-        <Form.Group>
-          <Form.Label>Try searching for one!</Form.Label>
-          <Form.Control
-            name='search'
-            placeholder='Search by name or location.'
-            ref={HotelPage}
-          />
-        </Form.Group>
-        
-        <Button type='submit'>Search</Button>
-      </Form>
-
-    </>
+    <Container>
+        <Search />
+        <Contact />
+    </Container>
     )
 }
 

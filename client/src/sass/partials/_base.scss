@@ -1,23 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: $color-background;
-}
-
-ul {
-    list-style: none;
-    background-color: $color-surface;
-    width: 100%;
-}
-
-li {
-    display: inline-block;
-    padding: 1em;
-   
-}
-
-.btn-primary {
-    background-color: $color-primary;
-}
-
-.btn-secondary {
-    background-color: $color-secondary;
+    padding: 0;
+    margin: 0;
 }

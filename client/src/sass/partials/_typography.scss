@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap');
+
+body {
+    font-family: $font-secondary; ;
+}
+
+h1 {
+    font-family: $font-primary;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: $font-primary;
+    font-weight: 300;
+}
+
+p {
+    font-family: $font-secondary; 
+}
+
