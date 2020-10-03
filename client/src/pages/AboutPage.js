@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 const AboutPage = () => (
     <>
         <h1>About us</h1>

@@ -15,7 +15,10 @@ const GlobalStyle = createGlobalStyle`
 
         --font-primary: 'Oswald', sans-serif;
         --font-secondary: 'Open Sans', sans-serif;
+        --font-size-normal: 300;
+        --font-size-bold: 700;
     }
+
     }
     body {
         margin: 0;

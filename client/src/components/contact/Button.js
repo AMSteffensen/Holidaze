@@ -9,6 +9,10 @@ const Button = styled.button`
     border: none;
     margin-bottom: 1rem;
     width: 100%;
+    font-family: var(--font-primary);
+    font-weight: var(--font-size-bold);
+    font-size: 1rem;
+    text-transform: uppercase;
 `;
 
 export default Button;
