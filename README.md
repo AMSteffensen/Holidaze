@@ -1,6 +1,9 @@
-# Hotel API example
+# Holidaze Project files
 
+## Installing project localy
 ```
+Git clone
+CD Into Client folder
 npm install
 ```
 
