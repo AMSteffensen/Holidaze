@@ -4,12 +4,15 @@ import {BASE_URL, headers} from "../../constants/api";
 
 // import components
 import Search from "../search/Search";
+import FeaturedPlace from "./components/FeaturedPlace";
 
 const Container = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   padding: 2em;
 `;
+
+const FEATURED_PLACE_INDEX = 1;
 
 function Home() {
   const [accomodations, setAccommodations] = useState([]);
@@ -27,10 +30,14 @@ function Home() {
       .finally(() => setLoading(false));
   }, []);
 
-  
+  const featuredPlace =
+    accomodations.length > 0 ? accomodations[FEATURED_PLACE_INDEX] : {};
+  console.log("featuredPlace", featuredPlace);
+
   return (
     <>
       <Search />
+      <FeaturedPlace {...featuredPlace} />
     </>
   );
 }
