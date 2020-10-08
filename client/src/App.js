@@ -21,17 +21,12 @@ import HotelPage from './pages/HotelPage';
 import HotelDetailsPage from './pages/HotelDetailsPage';
 import ContactPage from './pages/ContactPage';
 
-import GlobalStyle from "./styles/globalstyles";
-import theme from "./styles/theme";
-
-//import "./sass/main.scss";
-import "antd/dist/antd.css";
+import "./styles/index.css";
 
 function App() {
     return (
-        <AuthContextProvider>
-            <ThemeProvider theme={theme}>
-            <GlobalStyle />
+        <div className="bg-gray-200">
+            <AuthContextProvider>
             <Router>
                 <Nav />
                 <Container>
@@ -52,8 +47,8 @@ function App() {
                 </Container>
                 <Footer />
             </Router>
-            </ThemeProvider>
         </AuthContextProvider>
+        </div>
     );
 }
 
