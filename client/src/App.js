@@ -1,7 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import Container from "react-bootstrap/Container";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 //import components
@@ -29,7 +28,6 @@ function App() {
             <AuthContextProvider>
             <Router>
                 <Nav />
-                <Container>
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/login" component={Login} />
@@ -44,7 +42,6 @@ function App() {
                         <ProtectedRoute path="/admin/hotels/edit/:id" exact component={EditHotel} />
                         <Redirect to="/" />
                     </Switch>
-                </Container>
                 <Footer />
             </Router>
         </AuthContextProvider>
