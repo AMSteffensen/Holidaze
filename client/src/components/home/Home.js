@@ -5,6 +5,7 @@ import {BASE_URL, headers} from "../../constants/api";
 // import components
 import Search from "../search/Search";
 import FeaturedPlace from "./components/FeaturedPlace";
+import Questions from "./components/Questions";
 
 const Container = styled.div`
   max-width: 1100px;
@@ -38,6 +39,7 @@ function Home() {
     <>
       <Search />
       <FeaturedPlace {...featuredPlace} />
+      <Questions />
     </>
   );
 }
