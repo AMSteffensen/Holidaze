@@ -1,17 +1,13 @@
 import React, {useState, useEffect} from "react";
-import styled from "styled-components";
 import {BASE_URL, headers} from "../../constants/api";
+
 
 // import components
 import Search from "../search/Search";
 import FeaturedPlace from "./components/FeaturedPlace";
 import Questions from "./components/Questions";
-
-const Container = styled.div`
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2em;
-`;
+import Footer from "./components/Footer"
+import PopularPlaces from "./components/PopularPlaces"
 
 const FEATURED_PLACE_INDEX = 1;
 
@@ -38,8 +34,10 @@ function Home() {
   return (
     <>
       <Search />
+      <PopularPlaces places={accomodations} />
       <FeaturedPlace {...featuredPlace} />
       <Questions />
+      <Footer />
     </>
   );
 }

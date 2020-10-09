@@ -12,7 +12,7 @@ import AddHotel from "./components/admin/AddHotel";
 import EditHotel from "./components/admin/EditHotel";
 import Dashboard from "./components/admin/Dashboard";
 import Nav from "./components/layout/Nav";
-import Footer from "./components/footer/Footer";
+
 
 // pages
 import AboutPage from './pages/AboutPage';
@@ -42,7 +42,6 @@ function App() {
                         <ProtectedRoute path="/admin/hotels/edit/:id" exact component={EditHotel} />
                         <Redirect to="/" />
                     </Switch>
-                <Footer />
             </Router>
         </AuthContextProvider>
         </div>
