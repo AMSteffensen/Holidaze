@@ -1,12 +1,13 @@
 import React, {useContext, useState} from "react";
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useHistory} from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
 import Logout from "../auth/Logout";
 
 const NavLinks = ({open, onClose}) => {
+  const {isAuthenticated} = useContext(AuthContext);
   return (
     <div
-      className={`flex bg-black absolute w-full top-0 z-30 ${
+      className={`flex bg-black fixed w-full top-0 z-30 ${
         open ? "block" : "hidden"
       }`}
     >
@@ -27,13 +28,19 @@ const NavLinks = ({open, onClose}) => {
         <Link to='/contact' onClick={onClose}>
           <h2 className='text-center my-6 uppercase'>Contact</h2>
         </Link>
+        {isAuthenticated() && (
+          <Link to='/admin' onClick={onClose}>
+            <h2 className='text-center my-6 uppercase'>Admin</h2>
+          </Link>
+        )}
       </div>
     </div>
   );
 };
 
 function Nav() {
-  const {user} = useContext(AuthContext);
+  const history = useHistory();
+  const {logout, isAuthenticated} = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -50,9 +57,19 @@ function Nav() {
             <img className='h-16' src='/logo.svg' />
           </Link>
         </div>
-        <div className='w-10 h-10 flex justify-center items-center text-green-700'>
-          <i className='fa fa-user'></i>
-        </div>
+        <Link
+          to={!isAuthenticated() && "/login"}
+          onClick={() => {
+            logout();
+            history.push("/");
+          }}
+        >
+          <div className='w-10 h-10 flex justify-center items-center text-green-700'>
+            <i
+              className={`fa ${isAuthenticated() ? "fa-power-off" : "fa-user"}`}
+            ></i>
+          </div>
+        </Link>
       </nav>
     </>
   );

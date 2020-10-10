@@ -1,18 +1,17 @@
 import React, {useState, useEffect} from "react";
 import {BASE_URL, headers} from "../../constants/api";
-
+import PopularPlaces from "./components/PopularPlaces";
 
 // import components
 import Search from "../search/Search";
 import FeaturedPlace from "./components/FeaturedPlace";
 import Questions from "./components/Questions";
-import Footer from "./components/Footer"
-import PopularPlaces from "./components/PopularPlaces"
+import Footer from "./components/Footer";
 
 const FEATURED_PLACE_INDEX = 1;
 
 function Home() {
-  const [accomodations, setAccommodations] = useState([]);
+  const [accommodations, setAccommodations] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,13 +27,12 @@ function Home() {
   }, []);
 
   const featuredPlace =
-    accomodations.length > 0 ? accomodations[FEATURED_PLACE_INDEX] : {};
-  console.log("featuredPlace", featuredPlace);
+    accommodations.length > 0 ? accommodations[FEATURED_PLACE_INDEX] : {};
 
   return (
     <>
-      <Search />
-      <PopularPlaces places={accomodations} />
+      <Search accommodations={accommodations} />
+      <PopularPlaces places={accommodations} />
       <FeaturedPlace {...featuredPlace} />
       <Questions />
       <Footer />

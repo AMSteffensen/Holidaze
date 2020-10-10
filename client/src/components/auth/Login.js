@@ -1,45 +1,72 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import React, {useContext, useState} from "react";
+import {useForm} from "react-hook-form";
+import {Link, useHistory} from "react-router-dom";
+import {AuthContext} from "../../context/AuthContext";
+import ConfirmationModal from "../modal/ConfirmationModal";
 
 function Login() {
-    const { register, handleSubmit } = useForm();
+  const {login} = useContext(AuthContext);
+  const {register, handleSubmit} = useForm();
+  const [open, setOpen] = useState(false);
+  const history = useHistory();
 
-    function onSubmit(data) {
-        console.log("data", data);
+  function onSubmit(credentials) {
+    if (login(credentials)) {
+      setOpen(true);
     }
+    console.log("data", credentials);
+  }
 
-    return (
-        <>
-            <Form onSubmit={handleSubmit(onSubmit)}>
-                <h1>Login</h1>
-                <Form.Group>
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control name="username" placeholder="Enter your username" ref={register} />
-                </Form.Group>
-
-                <Form.Group>
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control name="password" placeholder="Enter your password" ref={register} />
-                </Form.Group>
-
-                <Button type="submit">Submit</Button>
-            </Form>
-        </>
-    );
+  return (
+    <>
+      <ConfirmationModal
+        message='Login successful'
+        open={open}
+        onClose={() => {
+          setOpen(false);
+          history.push("/admin");
+        }}
+      />
+      <form
+        className='flex flex-col h-screen p-4 text-center'
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <h2 className='font-bold mb-6 text-xl'>Login</h2>
+        <div className='flex flex-col mb-4'>
+          <label>Username</label>
+          <input
+            className='py-3 px-2 rounded-lg shadow-xl'
+            type='text'
+            name='username'
+            ref={register}
+          ></input>
+        </div>
+        <div className='flex flex-col mb-4'>
+          <label>Password</label>
+          <input
+            className='py-3 px-2 rounded-lg shadow-xl'
+            type='password'
+            name='password'
+            ref={register}
+          ></input>
+        </div>
+        <div className='flex justify-center mb-4'>
+          <button
+            className='bg-red-700 shadow-md px-2 py-3 text-white rounded-lg w-32'
+            ref={register}
+          >
+            Login
+          </button>
+        </div>
+        <p>
+          Don't have an account?{" "}
+          <Link to='/register'>
+            <span className='text-bold'>Register</span>
+          </Link>
+        </p>
+      </form>
+    </>
+  );
 }
 
 export default Login;
-
-// import React, { useContext } from "react";
-// import { AuthContext } from "../../context/AuthContext";
-// import Login from "./Logout";
-
-// function Login() {
-//     const { login } = useContext(AuthContext);
-
-//     return <button onClick={login}>Log in</button>;
-// }
-
-// export default Login;
