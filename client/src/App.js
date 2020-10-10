@@ -1,5 +1,4 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
@@ -12,7 +11,6 @@ import AddHotel from "./components/admin/AddHotel";
 import EditHotel from "./components/admin/EditHotel";
 import Dashboard from "./components/admin/Dashboard";
 import Nav from "./components/layout/Nav";
-
 
 // pages
 import AboutPage from './pages/AboutPage';
@@ -33,9 +31,9 @@ function App() {
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={Register} />
                         <Route path="/about" component={AboutPage} />
-                        <Route path="/hotels" component={HotelPage} />
+                        <Route path="/hotels/:id" component={HotelDetailsPage} />
+                        <Route path="/hotels" exact component={HotelPage} />
                         <Route path="/contact" component={ContactPage} />
-                        <Route path="/hotels-detail/:id" component={HotelDetailsPage} />
                         <ProtectedRoute path="/admin" exact component={Dashboard} />
                         <ProtectedRoute path="/admin/hotels" exact component={Hotels} />
                         <ProtectedRoute path="/admin/hotels/add" exact component={AddHotel} />
