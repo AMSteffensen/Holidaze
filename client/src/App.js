@@ -12,11 +12,9 @@ import EditHotel from "./components/admin/EditHotel"
 import Dashboard from "./components/admin/Dashboard"
 import Nav from "./components/layout/Nav"
 
-// pages
-import AboutPage from "./pages/AboutPage"
-import HotelPage from "./pages/HotelPage"
-import HotelDetailsPage from "./pages/HotelDetailsPage"
-import ContactPage from "./pages/ContactPage"
+import Establishment from "./components/establishment/Establishment"
+import EstablishmentDetail from "./components/establishment/EstablishmentDetail"
+import Contact from "./components/contact/Contact"
 
 import "./styles/index.css"
 import Messages from "./components/admin/Messages"
@@ -32,10 +30,9 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/about" component={AboutPage} />
-            <Route path="/hotels/:id" component={HotelDetailsPage} />
-            <Route path="/hotels" exact component={HotelPage} />
-            <Route path="/contact" component={ContactPage} />
+            <Route path="/hotels/:id" component={EstablishmentDetail} />
+            <Route path="/hotels" exact component={Establishment} />
+            <Route path="/contact" component={Contact} />
             <ProtectedRoute path="/admin" exact component={Dashboard} />
             <ProtectedRoute path="/admin/messages" exact component={Messages} />
             <ProtectedRoute path="/admin/enquiries" exact component={Enquiries} />

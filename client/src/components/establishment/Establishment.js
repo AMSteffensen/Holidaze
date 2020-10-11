@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { BASE_URL, headers } from "../constants/api"
-import HotelCard from "../components/card/HotelCard"
+import { BASE_URL, headers } from "../../constants/api"
+import HotelCard from "../card/HotelCard"
 
 function HotelPage() {
   const [hotels, setHotels] = useState([])

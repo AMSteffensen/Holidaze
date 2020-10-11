@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
-import styled from "styled-components"
 
-import { BASE_URL, headers } from "../constants/api"
-import ConfirmationModal from "../components/modal/ConfirmationModal"
+import { BASE_URL, headers } from "../../constants/api"
+import ConfirmationModal from "../modal/ConfirmationModal"
 
 function ContactPage() {
   const { register: contact, handleSubmit } = useForm()

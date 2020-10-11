@@ -9,7 +9,7 @@ export default ({ name = "Apartment in City", price, description, image, id }) =
         className="w-full h-32 rounded-lg bg-white relative shadow-lg"
         style={{ minWidth: "8rem" }}
       >
-        {image && <img src={image} className="w-full h-full rounded-lg object-cover" />}
+        {image && <img src={image} className="w-full h-full rounded-lg object-cover" alt={name} />}
         <div
           className="absolute top-20 right-0 bg-red-700 rounded-lg p-1 text-xs text-white"
           style={{ top: 25 }}

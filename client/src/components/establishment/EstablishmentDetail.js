@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { BASE_URL, headers } from "../constants/api"
-import Nav from "../components/layout/Nav"
-import AddBookingModal from "../components/modal/AddBookingModal"
+import { BASE_URL, headers } from "../../constants/api"
+import Nav from "../layout/Nav"
+import AddBookingModal from "../modal/AddBookingModal"
 
 const HotelDetailPage = ({ match }) => {
   const id = match.params.id
