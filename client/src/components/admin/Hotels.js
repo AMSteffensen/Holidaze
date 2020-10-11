@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { NavLink } from "react-router-dom"
 import { BASE_URL, headers } from "../../constants/api"
 import HotelCard from "../card/HotelCard"
 
