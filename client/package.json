@@ -1,5 +1,5 @@
 {
-  "name": "video-call-react-context-api",
+  "name": "hotel-booking-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -31,10 +31,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "flow": "flow"
+    "flow": "flow",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\""
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": ["react-app", "plugin:prettier/recommended"]
   },
   "browserslist": {
     "production": [
@@ -50,6 +52,16 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
-    "postcss-cli": "^8.0.0"
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "postcss-cli": "^8.0.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^2.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format"
+    }
   }
 }
