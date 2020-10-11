@@ -17,18 +17,18 @@ function AddHotel() {
 
   let { id } = useParams()
 
-  const options = { headers }
-  const fetchUrl = BASE_URL + "establishments/" + id
-
   useEffect(() => {
+    const fetchUrl = BASE_URL + "establishments/" + id
+    const options = { headers }
+
     fetch(fetchUrl, options)
       .then((response) => response.json())
       .then((json) => setHotel(json))
       .catch((error) => console.log(error))
-  }, [])
+  }, [id])
 
   async function onSubmit(data) {
-    console.log("data", data)
+    const fetchUrl = BASE_URL + "establishments/" + id
 
     const updateOptions = { headers, method: PATCH, body: JSON.stringify(data) }
     await fetch(fetchUrl, updateOptions)

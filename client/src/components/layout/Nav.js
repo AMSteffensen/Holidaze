@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react"
-import { Link, NavLink, useHistory } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
-import Logout from "../auth/Logout"
 
 const NavLinks = ({ open, onClose }) => {
   const { isAuthenticated } = useContext(AuthContext)
@@ -50,11 +49,11 @@ function Nav() {
         </button>
         <div id="logo" className="flex flex-1 justify-center">
           <Link to="/">
-            <img className="h-16" src="/logo.svg" />
+            <img className="h-16" src="/logo.svg" alt="logo" />
           </Link>
         </div>
         <Link
-          to={!isAuthenticated() && "/login"}
+          to={!isAuthenticated() ? "/login" : ""}
           onClick={() => {
             logout()
             history.push("/")

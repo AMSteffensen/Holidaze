@@ -1,6 +1,6 @@
 import React from "react"
 import useAutocomplete from "@material-ui/lab/useAutocomplete"
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import styled from "styled-components"
 
 const ListBox = styled.div`
@@ -46,16 +46,16 @@ export default function UseAutocomplete({ accommodations }) {
             placeholder="Search for Hotels"
             {...getInputProps()}
           />
-          <span class="absolute inset-y-0 right-0 flex items-center px-2">
-            <button class="p-1 focus:outline-none focus:shadow-outline">
+          <span className="absolute inset-y-0 right-0 flex items-center px-2">
+            <button className="p-1 focus:outline-none focus:shadow-outline">
               <svg
                 fill="none"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 viewBox="0 0 24 24"
-                class="w-6 h-6"
+                className="w-6 h-6"
               >
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>

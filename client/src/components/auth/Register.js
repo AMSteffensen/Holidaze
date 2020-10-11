@@ -3,18 +3,19 @@ import { useForm } from "react-hook-form"
 import { Link, useHistory } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 import ConfirmationModal from "../modal/ConfirmationModal"
+import useConfirmationModal from "../../hooks/useConfirmationModal"
 
 function Register() {
   const { register, handleSubmit } = useForm()
   const { registerUser } = useContext(AuthContext)
-  const [open, setOpen] = useState(false)
+  const [open, openModal, onClose] = useConfirmationModal()
 
   const history = useHistory()
 
   function onSubmit(credentials) {
     console.log("data", credentials)
     registerUser(credentials)
-    setOpen(true)
+    openModal()
   }
 
   return (
@@ -23,7 +24,7 @@ function Register() {
         message="Registration successful"
         open={open}
         onClose={() => {
-          setOpen(false)
+          onClose()
           history.push("/login")
         }}
       />

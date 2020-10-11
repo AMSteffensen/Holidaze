@@ -13,6 +13,8 @@ const FEATURED_PLACE_INDEX = 1
 function Home() {
   const [accommodations, setAccommodations] = useState([])
   const [loading, setLoading] = useState(true)
+  // TODO: Add loading spinner
+  console.log("loading", loading)
 
   useEffect(() => {
     const establishmentURL = BASE_URL + "establishments"
