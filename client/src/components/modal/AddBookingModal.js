@@ -27,11 +27,11 @@ export default ({ open, onClose }) => {
             </div>
             <div className="flex flex-1 flex-col mb-4">
                 <label>Start Date</label>
-                <input name="startDate" className="py-3 px-2 rounded-lg shadow-xl" type="date"></input>
+                <input name="startDate" className="py-3 px-2 rounded-lg shadow-xl bg-white w-full" type="date"></input>
             </div>
             <div className="flex flex-1 flex-col mb-4">
                 <label>End Date</label>
-                <input name="endDate" className="py-3 px-2 rounded-lg shadow-xl" type="date"></input>
+                <input name="endDate" className="py-3 px-2 rounded-lg shadow-xl bg-white w-full" type="date"></input>
             </div>
             <div className="flex justify-center">
                 <button className="bg-red-700 shadow-md px-2 py-3 text-white rounded-lg uppercase w-32">Book Now</button>
