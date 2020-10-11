@@ -1,17 +1,17 @@
-import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+import React, { useContext } from "react"
+import { useHistory } from "react-router-dom"
+import { AuthContext } from "../../context/AuthContext"
 
 function Login() {
-    const { logout } = useContext(AuthContext);
-    const history = useHistory();
+  const { logout } = useContext(AuthContext)
+  const history = useHistory()
 
-    function doLogout() {
-        logout();
-        history.push("/");
-    }
+  function doLogout() {
+    logout()
+    history.push("/")
+  }
 
-    return <button onClick={doLogout}>Log out</button>;
+  return <button onClick={doLogout}>Log out</button>
 }
 
-export default Login;
+export default Login
