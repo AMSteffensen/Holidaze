@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 import { BASE_URL, headers } from "../../../constants/api"
 import useConfirmationModal from "../../../hooks/useConfirmationModal"
 import ConfirmationModal from "../../modal/ConfirmationModal"
+import Container from '@material-ui/core/Container';
 
 export default () => {
   const { register, handleSubmit } = useForm()
@@ -24,7 +25,8 @@ export default () => {
   }
 
   return (
-    <>
+    <Container className="bg-gray-900 w-full flex flex-col  text-white">
+      <Container>
       <ConfirmationModal
         message={"Your message has been sent successfully"}
         open={open}
@@ -64,6 +66,7 @@ export default () => {
           </button>
         </form>
       </div>
-    </>
+      </Container>
+    </Container>
   )
 }

@@ -4,6 +4,8 @@ import { BASE_URL, headers } from "../../constants/api"
 import ConfirmationModal from "../modal/ConfirmationModal"
 import useConfirmationModal from "../../hooks/useConfirmationModal"
 import Footer from "../home/components/Footer"
+import Container from '@material-ui/core/Container';
+
 
 function ContactPage() {
   const { register: contact, handleSubmit } = useForm()
@@ -19,6 +21,7 @@ function ContactPage() {
 
   return (
     <>
+    <Container maxWidth="sm">
       <ConfirmationModal
         open={open}
         onClose={onClose}
@@ -55,7 +58,9 @@ function ContactPage() {
           </button>
         </form>
       </div>
-      <Footer />
+      
+    </Container>
+    <Footer />
     </>
   )
 }

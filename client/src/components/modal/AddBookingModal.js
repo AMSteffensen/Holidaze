@@ -4,6 +4,7 @@ import { useRouteMatch } from "react-router-dom"
 import { BASE_URL, headers } from "../../constants/api"
 import useConfirmationModal from "../../hooks/useConfirmationModal"
 import ConfirmationModal from "../modal/ConfirmationModal"
+import Container from '@material-ui/core/Container';
 
 export default ({ open, onClose }) => {
   let match = useRouteMatch()

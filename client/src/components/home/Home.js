@@ -8,9 +8,12 @@ import FeaturedPlace from "./components/FeaturedPlace"
 import Questions from "./components/Questions"
 import Footer from "./components/Footer"
 
+import CssBaseline from "@material-ui/core/CssBaseline"
+import Container from "@material-ui/core/Container"
+
 const FEATURED_PLACE_INDEX = 1
 
-function Home() {
+function Home({ boxData }) {
   const [accommodations, setAccommodations] = useState([])
   const [loading, setLoading] = useState(true)
   // TODO: Add loading spinner
@@ -33,9 +36,12 @@ function Home() {
 
   return (
     <>
-      <Search accommodations={accommodations} />
-      <PopularPlaces places={accommodations} />
-      <FeaturedPlace {...featuredPlace} />
+      <CssBaseline />
+      <Container maxWidth="sm">
+        <Search accommodations={accommodations} />
+        <PopularPlaces places={accommodations} />
+        <FeaturedPlace {...featuredPlace} />
+      </Container>
       <Questions />
       <Footer />
     </>

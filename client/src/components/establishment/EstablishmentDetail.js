@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { BASE_URL, headers } from "../../constants/api"
 import AddBookingModal from "../modal/AddBookingModal"
+import Container from "@material-ui/core/Container"
 
 const HotelDetailPage = ({ match }) => {
   const id = match.params.id
@@ -24,8 +25,9 @@ const HotelDetailPage = ({ match }) => {
   const { name, price, description, image } = hotel
 
   return (
-    <>
+    <Container >
       <AddBookingModal open={open} onClose={() => setOpen(false)} />
+      <Container maxWidth="sm">
       <div className="p-4 min-h-screen">
         <div className="h-32 rounded-lg relative shadow-lg bg-white mb-4">
           <div
@@ -66,7 +68,9 @@ const HotelDetailPage = ({ match }) => {
         <h3 className="text-green-800 font-bold mt-12 mb-8">About hotel</h3>
         <p>{description}</p>
       </div>
-    </>
+      </Container>
+     
+    </Container>
   )
 }
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const PlaceTile = ({ id, name, image, price, rating }) => {
   return (
     <div
-      className="w-64 h-32 rounded-lg bg-white relative shadow-lg mr-4"
+      className="lg:flex w-64 h-32 rounded-lg bg-white relative shadow-lg mr-4"
       style={{ minWidth: "8rem" }}
     >
       <Link to={`/hotels/${id}`}>

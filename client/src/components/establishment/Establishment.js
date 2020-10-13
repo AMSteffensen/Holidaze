@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { BASE_URL, headers } from "../../constants/api"
 import HotelCard from "../card/HotelCard"
+import Container from "@material-ui/core/Container"
 
 function HotelPage() {
   const [hotels, setHotels] = useState([])
@@ -18,12 +19,14 @@ function HotelPage() {
   }, [])
 
   return (
-    <div className="p-4 min-h-screen">
-      <h1>Hotels</h1>
-      {hotels.map((hotel) => (
-        <HotelCard link={`/hotels/${hotel.id}`} {...hotel} />
-      ))}
-    </div>
+    <>
+      <div className="p-4 min-h-screen">
+        <h1>Hotels</h1>
+        {hotels.map((hotel) => (
+          <HotelCard link={`/hotels/${hotel.id}`} {...hotel} />
+        ))}
+      </div>
+    </>
   )
 }
 
