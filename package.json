@@ -1,5 +1,6 @@
 {
-  "name": "hotel-booking-app",
+  "name": "holidaze",
+  "homepage": "http://amsteffensen.github.io/holidaze",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +10,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "flow-bin": "^0.135.0",
+    "gh-pages": "^3.1.0",
     "material-ui": "^0.20.2",
     "react": "^16.13.1",
     "react-autocomplete": "^1.8.1",
@@ -33,7 +35,9 @@
     "eject": "react-scripts eject",
     "flow": "flow",
     "lint": "eslint .",
-    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\""
+    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
