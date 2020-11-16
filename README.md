@@ -2,9 +2,9 @@
 
 Final project exam at [Noroff](https://noroff.no) (Front end development 2020)
 
-Styleguide: https://xd.adobe.com/view/82c47ef7-49e8-4bd3-8a7d-68274e059268-d797/
-UX Prototype: https://xd.adobe.com/view/1a35a228-d950-45ec-8c16-0349975cd64c-4f66/
-Live Version of Site deployed to: https://ams-holidaze.netlify.app/
+- Styleguide: https://xd.adobe.com/view/82c47ef7-49e8-4bd3-8a7d-68274e059268-d797/
+- UX Prototype: https://xd.adobe.com/view/1a35a228-d950-45ec-8c16-0349975cd64c-4f66/
+- Live Version of Site deployed to: https://ams-holidaze.netlify.app/
 
 ## Dev Setup
 
