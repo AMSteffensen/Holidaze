@@ -9,10 +9,9 @@ Final project exam at [Noroff](https://noroff.no) (Front end development 2020)
 ## Dev Setup
 
 1. Fork or clone this repo
-2. Enter `client` directory and run npm install
+2. Run npm install
 3. Update env variables
    `cp .env.example .env Replace your-api-key with your API_KEY. Then proceed.`
-
 4. Start the client by running `npm run start`, wait for `Starting the development server...`
 5. Navigate to [localhost:3000](http://localhost:3000) in your browser, the page title should be Holidaze and you should see a styled page
 
