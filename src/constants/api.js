@@ -1,6 +1,6 @@
 const KEY = process.env.REACT_APP_API_KEY
 const url = "https://us-central1-noroff-final-exam.cloudfunctions.net/api/v1/"
-const proxy = "https://noroffcors.herokuapp.com/"
+const proxy = "https://hidden-temple-21187.herokuapp.com/"
 export const BASE_URL = proxy + url
 
 export const headers = {

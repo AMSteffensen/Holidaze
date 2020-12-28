@@ -1,6 +1,6 @@
 {
   "name": "holidaze",
-  "homepage": "http://amsteffensen.github.io/holidaze",
+  "homepage": "https://ams-holidaze.netlify.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
